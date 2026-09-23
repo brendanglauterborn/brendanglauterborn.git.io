@@ -83,11 +83,11 @@ The model also picked up on structural cues, not just semantics — for "The pas
 
 This project explores how well a CNN can generalize fine-grained visual classification, using dog breeds as a proxy for a task humans find intuitive but is genuinely hard at scale. I built a model that detects whether an image contains a human or a dog, classifies the dog's breed across 133 categories, and maps human faces to their closest-matching breed. Replacing the baseline CNN with DenseNet-161 transfer learning took accuracy from roughly 13% to 86%.
 
-<img src="images/dog1.PNG" width="500">
+<img src="images/dog1.PNG" width="300">
 
-<img src="images/dog3.PNG" width="500">
+<img src="images/dog3.PNG" width="300">
 
-<img src="images/dog2.PNG" width="500">
+<img src="images/dog2.PNG" width="300">
 
 ![Python](https://img.shields.io/badge/Python-eeeeee?style=flat&logo=python&logoColor=3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-eeeeee?style=flat&logo=pytorch&logoColor=EE4C2C)
 
@@ -119,7 +119,7 @@ Random Forest reached 98.9% accuracy versus about 91% for the linear models, whi
 
 ![Random Forest feature importance](images/rfFI.png)
 
-*Left: permutation importance (mean decrease in accuracy). Right: mean decrease in Gini. Both put inactivity features and number of profiles at the top.*
+*Left: permutation importance (mean decrease in accuracy). Right: mean decrease in Gini impurity, how much each feature reduces class mixing across the forest's splits. Both put inactivity features and number of profiles at the top.*
 
 ![R](https://img.shields.io/badge/R-eeeeee?style=flat&logo=r&logoColor=276DC3) ![Logistic Regression](https://img.shields.io/badge/Logistic%20Regression-eeeeee?style=flat) ![SVM](https://img.shields.io/badge/SVM-eeeeee?style=flat) ![Random Forest](https://img.shields.io/badge/Random%20Forest-eeeeee?style=flat)
 
