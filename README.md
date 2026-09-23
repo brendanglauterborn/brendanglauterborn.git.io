@@ -19,27 +19,26 @@ B.S. Applied Mathematics, Texas A&M University
 - Trained a multi-output XGBoost model on engineered time/lag features to predict kW usage and detect anomalies for 200 CAISO target accounts
 - Combined ML predictions with rule-based logic to build an anomaly detection system for customer load curtailment, speeding up payout processing
 
-
 ### Business Intelligence Developer Intern — CPower, 06/2025 – 08/2025
 - Built Python data quality scripts validating CRM data (Microsoft Dynamics 365), flagging ~8.5% of leads as low quality
 - Implemented fuzzy matching to detect ~250 duplicate accounts across Dataverse and SharePoint
 
-
 ### Graduate Teaching Assistant — Towson University, Dept. of Computer Science, 01/2026 – 05/2026
 - Assisted teaching Data Structures and Object-Oriented Programming (Java); evaluated and debugged student code
 
-
 ## Projects
-
 
 ### Brain Tumor Classification with Explainable AI
 
 Brain tumors are typically diagnosed from MRI scans, a process that relies heavily on radiologist judgment and can benefit from automated, interpretable support tools. In this project, I built a custom convolutional neural network in PyTorch to classify tumor type from MRI images, then improved performance by applying DenseNet-121 transfer learning, raising accuracy from 79% to 88%. To make the model's decisions interpretable, I applied Grad-CAM to generate class activation heatmaps highlighting the MRI regions driving each prediction.
 
-![Brain Tumor Classification](images/brain-tumor.png)
+| Original MRI | Grad-CAM |
+|:---:|:---:|
+| ![Original MRI](images/xai2.1.png) | ![Grad-CAM](images/xai2.2.png) |
+| ![Original MRI](images/xai3.1.png) | ![Grad-CAM](images/xai3.2.png) |
+| ![Original MRI](images/xai4.1.png) | ![Grad-CAM](images/xai4.2.png) |
 
 View code on GitHub.
-
 
 ### Humor Detection with Explainable AI
 
@@ -49,7 +48,6 @@ Humor is notoriously hard for models to detect because it depends on subtle cont
 
 View code on GitHub.
 
-
 ### CNN-Based Dog Breed Classification and Human-Dog Mapping
 
 This project explores how well a CNN can generalize fine-grained visual classification, using dog breeds as a proxy for a task humans find intuitive but is genuinely hard at scale. I built a pipeline that detects whether an image contains a human or a dog, classifies the dog's breed across 133 categories, and maps human faces to their closest-matching breed. Replacing the baseline CNN with DenseNet-161 transfer learning took accuracy from roughly 13% to 86%.
@@ -57,7 +55,6 @@ This project explores how well a CNN can generalize fine-grained visual classifi
 ![Dog Breed Classification](images/dog-breed.png)
 
 View code on GitHub.
-
 
 ### MovieLens Recommender System
 
@@ -67,7 +64,6 @@ Recommender systems are core to how platforms surface relevant content, but naiv
 
 View code on GitHub.
 
-
 ### Subreddit Sentiment Classifier
 
 Online comment quality is difficult to define, let alone classify automatically, since "quality" spans everything from controversy to genuine insight. In this project, I fine-tuned a RoBERTa transformer to classify Reddit comments into four categories — Controversial, Baseline, High-Quality, and Viral — building a full NLP pipeline from preprocessing through transformer tokenization and supervised training. The model reached an F1 score of approximately 0.79 on validation data.
@@ -75,7 +71,6 @@ Online comment quality is difficult to define, let alone classify automatically,
 ![Subreddit Sentiment Classifier](images/subreddit-sentiment.png)
 
 View code on GitHub.
-
 
 ### Natural Language to SQL — LLM Prompt Engineering
 
