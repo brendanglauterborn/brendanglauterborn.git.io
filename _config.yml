@@ -1,22 +1,3 @@
-# Theme Core Configuration
-theme: jekyll-theme-midnight
-
-# Basic Information
+theme: jekyll-theme-hacker
 title: Brendan Lauterborn
-position: Data Scientist
-# description: Minimal is a theme for GitHub Pages.
-
-# Profile Picture Settings
-# avatar: ./images/
-# favicon: ./images/
-# favicon_dark: ./images/
-
-# Features & Customizations
-auto_dark_mode: true       
-enable_footnote: false     
-
-# Links & Icons 
-github_link: https://github.com/brendanglauterborn
-linkedin: https://www.linkedin.com/in/brendanlauterborn/
-email: brendan.lauterborn@gmail.com
-# cv_link: assets/files/resume.pdf
+# description: Data Scientist | Baltimore, MD
