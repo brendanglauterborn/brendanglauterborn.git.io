@@ -44,6 +44,8 @@ DenseNet121 improved meningioma classification the most, the class the custom CN
 
 [View code on GitHub](https://github.com/brendanglauterborn/brain-tumor-mri-classification-xai).
 
+---
+
 ### Humor Detection with Explainable AI
 
 Humor is notoriously hard for models to detect because it depends on context, ambiguity, and wordplay that simple keyword or sentiment approaches miss. In this project, I fine-tuned a RoBERTa transformer to classify text as humorous or non-humorous, taking accuracy from a 56% baseline to 98% after fine-tuning. I then applied Captum's Integrated Gradients to attribute each prediction back to specific tokens, and built a full-stack app in FastAPI and React so users can submit their own text and see real-time predictions alongside the token-level explanations.
@@ -62,6 +64,8 @@ The model also picked up on structural cues, not just semantics — for "The pas
 
 [View code on GitHub](https://github.com/brendanglauterborn/Humor-Detection-with-XAI).
 
+---
+
 ### CNN-Based Dog Breed Classification and Human-Dog Mapping
 
 This project explores how well a CNN can generalize fine-grained visual classification, using dog breeds as a proxy for a task humans find intuitive but is genuinely hard at scale. I built a pipeline that detects whether an image contains a human or a dog, classifies the dog's breed across 133 categories, and maps human faces to their closest-matching breed. Replacing the baseline CNN with DenseNet-161 transfer learning took accuracy from roughly 13% to 86%.
@@ -69,6 +73,8 @@ This project explores how well a CNN can generalize fine-grained visual classifi
 ![Dog Breed Classification](images/dog-breed.png)
 
 View code on GitHub.
+
+---
 
 ### MovieLens Recommender System
 
@@ -78,6 +84,8 @@ Recommender systems are core to how platforms surface relevant content, but naiv
 
 View code on GitHub.
 
+---
+
 ### Subreddit Sentiment Classifier
 
 Online comment quality is difficult to define, let alone classify automatically, since "quality" spans everything from controversy to genuine insight. In this project, I fine-tuned a RoBERTa transformer to classify Reddit comments into four categories — Controversial, Baseline, High-Quality, and Viral — building a full NLP pipeline from preprocessing through transformer tokenization and supervised training. The model reached an F1 score of approximately 0.79 on validation data.
@@ -85,6 +93,8 @@ Online comment quality is difficult to define, let alone classify automatically,
 ![Subreddit Sentiment Classifier](images/subreddit-sentiment.png)
 
 View code on GitHub.
+
+---
 
 ### Natural Language to SQL — LLM Prompt Engineering
 
