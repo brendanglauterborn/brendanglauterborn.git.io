@@ -74,11 +74,11 @@ The model also picked up on structural cues, not just semantics — for "The pas
 
 This project explores how well a CNN can generalize fine-grained visual classification, using dog breeds as a proxy for a task humans find intuitive but is genuinely hard at scale. I built a model that detects whether an image contains a human or a dog, classifies the dog's breed across 133 categories, and maps human faces to their closest-matching breed. Replacing the baseline CNN with DenseNet-161 transfer learning took accuracy from roughly 13% to 86%.
 
-<img src="images/dog1.png" width="500">
+<img src="images/dog1.PNG" width="500">
 
-<img src="images/dog3.png" width="500">
+<img src="images/dog3.PNG" width="500">
 
-<img src="images/dog2.png" width="500">
+<img src="images/dog2.PNG" width="500">
 
 ![Python](https://img.shields.io/badge/Python-eeeeee?style=flat&logo=python&logoColor=3776AB) ![PyTorch](https://img.shields.io/badge/PyTorch-eeeeee?style=flat&logo=pytorch&logoColor=EE4C2C)
 
@@ -104,7 +104,7 @@ Netflix wants to know which subscribers are about to leave. I framed this as bin
 
 Random Forest reached 98.9% accuracy versus about 91% for the linear models, which was suspicious enough that I dug into feature importance. Inactivity signals (watch hours, avg watch time per day, last login days) dominated, along with number of profiles and payment method. Logistic regression agreed: those features were significant at p < .01. Activity was the strongest churn predictor, consistent with the business intuition that disengaged users leave.
 
-![Random Forest feature importance](rfFI.png)
+![Random Forest feature importance](images/rfFI.png)
 
 *Left: permutation importance (mean decrease in accuracy). Right: mean decrease in Gini. Both put inactivity features and number of profiles at the top.*
 
@@ -134,14 +134,8 @@ Streaming platforms have far more content than anyone can browse, so personaliza
 
 User-based CF also had an RMSE of 0.876 over 19,347 test ratings.
 
-##### User-based CF (relevant = rating ≥ 3.0)
-
-![User-based CF performance metrics vs K](images/cf_perf1.png)
-
-##### ALS Matrix Factorization
-
-![ALS performance metrics vs K](images/ALS_perf1.png)
-
+| User-based CF (relevant = rating ≥ 3.0) | ALS Matrix Factorization |
+| <img src="images/cf_perf1.png" width="400"> | <img src="images/ALS_perf1.png" width="400"> |
 #### Key Finding
 
 ALS beat user-based CF on every ranking metric. At K=5, ALS precision was 14.2% versus 0.66% for the baseline. MovieLens is sparse, so most user pairs share very few rated movies, which weakens neighbor-based similarity. Latent factors can pick up structure that neighbors miss. Precision fell slightly as K grew for both models, while recall rose, which is the expected tradeoff. ALS recall reached 23.9% by K=20.
