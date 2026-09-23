@@ -61,11 +61,11 @@ Humor is notoriously hard for models to detect because it depends on context, am
 |---|---|
 | <img src="images/cm-base.png" width="280"> | <img src="images/cm.png" width="280"> |
 
-Integrated Gradients highlighted which tokens drove each predictio: "I used to be a banker but I lost interest," words like "banker," "used," and "lost" pushed the model toward humorous, showing it leans on contextual interaction between tokens rather than any single word.
+Integrated Gradients highlighted which tokens drove each prediction. ex: "I used to be a banker but I lost interest," words like "banker," "used," and "lost" pushed the model toward humorous, showing it leans on contextual interaction between tokens rather than any single word.
 
 <img src="images/xai1.png" width="500">
 
-The model also picked up on structural cues, not just semantics: for "The past, the present and the future all walk into a bar. It was tense," the abrupt period and the words following it carried strong positive attribution.
+The model also picked up on structural cues, not just semantics. ex: "The past, the present and the future all walk into a bar. It was tense," the abrupt period and the words following it carried strong positive attribution.
 
 <img src="images/xai2.png" width="500">
 
