@@ -135,7 +135,10 @@ Streaming platforms have far more content than anyone can browse, so personaliza
 User-based CF also had an RMSE of 0.876 over 19,347 test ratings.
 
 | User-based CF (relevant = rating ≥ 3.0) | ALS Matrix Factorization |
+|---|---|
 | <img src="images/cf_perf1.png" width="400"> | <img src="images/ALS_perf1.png" width="400"> |
+
+#### Key Finding
 #### Key Finding
 
 ALS beat user-based CF on every ranking metric. At K=5, ALS precision was 14.2% versus 0.66% for the baseline. MovieLens is sparse, so most user pairs share very few rated movies, which weakens neighbor-based similarity. Latent factors can pick up structure that neighbors miss. Precision fell slightly as K grew for both models, while recall rose, which is the expected tradeoff. ALS recall reached 23.9% by K=20.
