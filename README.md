@@ -38,6 +38,12 @@ Brain tumors are typically diagnosed from MRI scans, a process that relies heavi
 | ![Original MRI](images/xai3.1.png) | ![Grad-CAM](images/xai3.2.png) |
 | ![Original MRI](images/xai4.1.png) | ![Grad-CAM](images/xai4.2.png) |
 
+DenseNet121 improved meningioma classification the most, the class the custom CNN struggled with — F1 rose from 0.58 to 0.77 as recall improved from 0.53 to 0.79.
+
+| Custom CNN | DenseNet121 Transfer Learning |
+|:---:|:---:|
+| ![Custom CNN Confusion Matrix](images/scratchCM.png) | ![DenseNet121 Confusion Matrix](images/transCM.png) |
+
 View code on GitHub.
 
 ### Humor Detection with Explainable AI
