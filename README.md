@@ -6,6 +6,7 @@ brendan.lauterborn@gmail.com | [github.com/brendanglauterborn](https://github.co
 ## Education
 
 M.S. Computer Science — Data Science, Towson University
+
 B.S. Applied Mathematics, Texas A&M University
 
 ## Work Experience
