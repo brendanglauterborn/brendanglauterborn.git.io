@@ -37,6 +37,27 @@ Brain tumors are typically diagnosed from MRI scans, a process that relies heavi
 | <img src="images/xai3.1.png" width="220"> | <img src="images/xai3.2.png" width="220"> |
 | <img src="images/xai4.1.png" width="220"> | <img src="images/xai4.2.png" width="220"> |
 
+
+**Custom CNN**
+
+| Class | Precision | Recall | F1-Score |
+|---|---|---|---|
+| Glioma | 0.73 | 0.83 | 0.78 |
+| Healthy | 0.94 | 0.85 | 0.89 |
+| Meningioma | 0.64 | 0.53 | 0.58 |
+| Pituitary | 0.83 | 0.92 | 0.87 |
+| **Weighted Avg** | **0.80** | **0.80** | **0.79** |
+
+**DenseNet121 Transfer Learning**
+
+| Class | Precision | Recall | F1-Score |
+|---|---|---|---|
+| Glioma | 0.88 | 0.87 | 0.88 |
+| Healthy | 0.96 | 0.96 | 0.96 |
+| Meningioma | 0.75 | 0.79 | 0.77 |
+| Pituitary | 0.93 | 0.90 | 0.92 |
+| **Weighted Avg** | **0.89** | **0.89** | **0.89** |
+
 DenseNet121 improved meningioma classification the most, the class the custom CNN struggled with. The F1 score rose from 0.58 to 0.77 as recall improved from 0.53 to 0.79.
 
 | Custom CNN | DenseNet121 Transfer Learning |
