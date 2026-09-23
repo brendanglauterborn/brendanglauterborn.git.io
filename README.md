@@ -1,13 +1,11 @@
 # Brendan Lauterborn
 
 Data Scientist — Baltimore, MD
-
-brendan.lauterborn@gmail.com | github.com/brendanglauterborn
+brendan.lauterborn@gmail.com | [github.com/brendanglauterborn](https://github.com/brendanglauterborn)
 
 ## Education
 
 M.S. Computer Science — Data Science, Towson University
-
 B.S. Applied Mathematics, Texas A&M University
 
 ## Work Experience
@@ -34,25 +32,35 @@ Brain tumors are typically diagnosed from MRI scans, a process that relies heavi
 
 | Original MRI | Grad-CAM |
 |:---:|:---:|
-| ![Original MRI](images/xai2.1.png) | ![Grad-CAM](images/xai2.2.png) |
-| ![Original MRI](images/xai3.1.png) | ![Grad-CAM](images/xai3.2.png) |
-| ![Original MRI](images/xai4.1.png) | ![Grad-CAM](images/xai4.2.png) |
+| <img src="images/xai2.1.png" width="220"> | <img src="images/xai2.2.png" width="220"> |
+| <img src="images/xai3.1.png" width="220"> | <img src="images/xai3.2.png" width="220"> |
+| <img src="images/xai4.1.png" width="220"> | <img src="images/xai4.2.png" width="220"> |
 
 DenseNet121 improved meningioma classification the most, the class the custom CNN struggled with — F1 rose from 0.58 to 0.77 as recall improved from 0.53 to 0.79.
 
 | Custom CNN | DenseNet121 Transfer Learning |
 |:---:|:---:|
-| ![Custom CNN Confusion Matrix](images/scratchCM.png) | ![DenseNet121 Confusion Matrix](images/transCM.png) |
+| <img src="images/scratchCM.png" width="300"> | <img src="images/transCM.png" width="300"> |
 
-View code on GitHub.
+[View code on GitHub](https://github.com/brendanglauterborn/brain-tumor-mri-classification-xai).
 
 ### Humor Detection with Explainable AI
 
-Humor is notoriously hard for models to detect because it depends on subtle context that simple keyword or sentiment approaches miss. In this project, I fine-tuned a RoBERTa transformer to classify text as humorous or not, improving accuracy from 56% to 98%. I then applied Captum's Integrated Gradients to attribute each prediction back to specific tokens, and built a full-stack app in FastAPI and React so users can submit their own text and see real-time predictions alongside the token-level explanations.
+Humor is notoriously hard for models to detect because it depends on context, ambiguity, and wordplay that simple keyword or sentiment approaches miss. In this project, I fine-tuned a RoBERTa transformer to classify text as humorous or non-humorous, taking accuracy from a 56% baseline to 98% after fine-tuning. I then applied Captum's Integrated Gradients to attribute each prediction back to specific tokens, and built a full-stack app in FastAPI and React so users can submit their own text and see real-time predictions alongside the token-level explanations.
 
-![Humor Detection](images/humor-detection.png)
+| Baseline RoBERTa | Fine-Tuned Model |
+|:---:|:---:|
+| <img src="images/cm-base.png" width="280"> | <img src="images/cm.png" width="280"> |
 
-View code on GitHub.
+Integrated Gradients highlighted which tokens drove each prediction — for "I used to be a banker but I lost interest," words like "banker," "used," and "lost" pushed the model toward humorous, showing it leans on contextual interaction between tokens rather than any single word.
+
+<img src="images/xai1.png" width="500">
+
+The model also picked up on structural cues, not just semantics — for "The past, the present and the future all walk into a bar. It was tense," the abrupt period and the words following it carried strong positive attribution.
+
+<img src="images/xai2.png" width="500">
+
+[View code on GitHub](https://github.com/brendanglauterborn/Humor-Detection-with-XAI).
 
 ### CNN-Based Dog Breed Classification and Human-Dog Mapping
 
