@@ -37,7 +37,7 @@ Brain tumors are typically diagnosed from MRI scans, a process that relies heavi
 | <img src="images/xai3.1.png" width="220"> | <img src="images/xai3.2.png" width="220"> |
 | <img src="images/xai4.1.png" width="220"> | <img src="images/xai4.2.png" width="220"> |
 
-DenseNet121 improved meningioma classification the most, the class the custom CNN struggled with — F1 rose from 0.58 to 0.77 as recall improved from 0.53 to 0.79.
+DenseNet121 improved meningioma classification the most, the class the custom CNN struggled with. The F1 score rose from 0.58 to 0.77 as recall improved from 0.53 to 0.79.
 
 | Custom CNN | DenseNet121 Transfer Learning |
 |---|---|
@@ -61,11 +61,11 @@ Humor is notoriously hard for models to detect because it depends on context, am
 |---|---|
 | <img src="images/cm-base.png" width="280"> | <img src="images/cm.png" width="280"> |
 
-Integrated Gradients highlighted which tokens drove each prediction — for "I used to be a banker but I lost interest," words like "banker," "used," and "lost" pushed the model toward humorous, showing it leans on contextual interaction between tokens rather than any single word.
+Integrated Gradients highlighted which tokens drove each predictio: "I used to be a banker but I lost interest," words like "banker," "used," and "lost" pushed the model toward humorous, showing it leans on contextual interaction between tokens rather than any single word.
 
 <img src="images/xai1.png" width="500">
 
-The model also picked up on structural cues, not just semantics — for "The past, the present and the future all walk into a bar. It was tense," the abrupt period and the words following it carried strong positive attribution.
+The model also picked up on structural cues, not just semantics: for "The past, the present and the future all walk into a bar. It was tense," the abrupt period and the words following it carried strong positive attribution.
 
 <img src="images/xai2.png" width="500">
 
@@ -182,8 +182,8 @@ ALS beat user-based CF on every ranking metric. At K=5, ALS precision was 14.2% 
 
 <br>
 
-### Natural Language to SQL — LLM Prompt Engineering
+### Natural Language to SQL  LLM Prompt Engineering
 
-As LLMs get used more often to translate natural language questions into executable SQL, understanding where and why they fail becomes important for anyone relying on them in production. In this project, I used the OpenAI API to run controlled prompt-engineering experiments — zero-shot, few-shot, and chain-of-thought — measuring how each strategy affected query accuracy. The results quantified clear accuracy tradeoffs between approaches and surfaced common failure modes in LLM-generated SQL.
+As LLMs get used more often to translate natural language questions into executable SQL, understanding where and why they fail becomes important for anyone relying on them in production. In this project, I used the OpenAI API to run controlled prompt-engineering experiments consisting of zero-shot, few-shot, and chain-of-thought. I measured how each strategy affected query accuracy. The results quantified clear accuracy tradeoffs between approaches and surfaced common failure modes in LLM-generated SQL.
 
 ![Python](https://img.shields.io/badge/Python-eeeeee?style=flat&logo=python&logoColor=3776AB) ![OpenAI API](https://img.shields.io/badge/OpenAI%20API-eeeeee?style=flat&logo=openai&logoColor=412991) ![SQL](https://img.shields.io/badge/SQL-eeeeee?style=flat)
