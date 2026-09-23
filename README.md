@@ -46,7 +46,11 @@ DenseNet121 improved meningioma classification the most, the class the custom CN
 
 [View code on GitHub](https://github.com/brendanglauterborn/brain-tumor-mri-classification-xai).
 
+<br>
+
 ---
+
+<br>
 
 ### Humor Detection with Explainable AI
 
@@ -68,7 +72,11 @@ The model also picked up on structural cues, not just semantics — for "The pas
 
 [View code on GitHub](https://github.com/brendanglauterborn/Humor-Detection-with-XAI).
 
+<br>
+
 ---
+
+<br>
 
 ### CNN-Based Dog Breed Classification and Human-Dog Mapping
 
@@ -84,7 +92,11 @@ This project explores how well a CNN can generalize fine-grained visual classifi
 
 [View code on GitHub](https://github.com/brendanglauterborn/cnn-dog-breed-classifier).
 
+<br>
+
 ---
+
+<br>
 
 ### Netflix Customer Churn Prediction
 
@@ -112,7 +124,11 @@ Random Forest reached 98.9% accuracy versus about 91% for the linear models, whi
 
 [View code on GitHub](https://github.com/brendanglauterborn/Big-Data-Classification).
 
+<br>
+
 ---
+
+<br>
 
 ### MovieLens Recommender System: User-Based CF vs. ALS Matrix Factorization
 
@@ -134,11 +150,17 @@ Streaming platforms have far more content than anyone can browse, so personaliza
 
 User-based CF also had an RMSE of 0.876 over 19,347 test ratings.
 
-| User-based CF (relevant = rating ≥ 3.0) | ALS Matrix Factorization |
-|---|---|
-| <img src="images/cf_perf1.png" width="400"> | <img src="images/ALS_perf1.png" width="400"> |
+<table>
+  <tr>
+    <td align="center"><b>User-based CF (relevant = rating ≥ 3.0)</b></td>
+    <td align="center"><b>ALS Matrix Factorization</b></td>
+  </tr>
+  <tr>
+    <td><img src="images/cf_perf1.png" width="400"></td>
+    <td><img src="images/ALS_perf1.png" width="400"></td>
+  </tr>
+</table>
 
-#### Key Finding
 #### Key Finding
 
 ALS beat user-based CF on every ranking metric. At K=5, ALS precision was 14.2% versus 0.66% for the baseline. MovieLens is sparse, so most user pairs share very few rated movies, which weakens neighbor-based similarity. Latent factors can pick up structure that neighbors miss. Precision fell slightly as K grew for both models, while recall rose, which is the expected tradeoff. ALS recall reached 23.9% by K=20.
@@ -153,7 +175,11 @@ ALS beat user-based CF on every ranking metric. At K=5, ALS precision was 14.2% 
 
 [View code on GitHub](https://github.com/brendanglauterborn/Big-Data-Recommender-Sys).
 
+<br>
+
 ---
+
+<br>
 
 ### Natural Language to SQL — LLM Prompt Engineering
 
