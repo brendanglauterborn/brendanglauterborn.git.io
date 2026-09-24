@@ -256,5 +256,3 @@ Difficulty mattered more than prompting strategy. All three strategies handled e
 - The chain-of-thought prompt asked the model not to output its reasoning, so I never inspected whether it actually reasoned step by step.
 
 ![Python](https://img.shields.io/badge/Python-eeeeee?style=flat&logo=python&logoColor=3776AB) ![OpenAI API](https://img.shields.io/badge/OpenAI%20API-eeeeee?style=flat&logo=openai&logoColor=412991) ![SQLite](https://img.shields.io/badge/SQLite-eeeeee?style=flat&logo=sqlite&logoColor=003B57) ![pandas](https://img.shields.io/badge/pandas-eeeeee?style=flat&logo=pandas&logoColor=150458)
-
-[View code on GitHub](#)
