@@ -246,17 +246,12 @@ The schema is embedded directly in each prompt rather than retrieved with RAG, w
 | Few-shot | 5/5 | 4/5 | 1/5 | 10/15 |
 | Chain-of-thought | 5/5 | 5/5 | 2/5 | 12/15 |
 
-<img src="images/sql_by_difficulty.png" width="600">
-
-<img src="images/sql_grading_breakdown.png" width="600">
-
 #### Key Finding
 
 Difficulty mattered more than prompting strategy. All three strategies handled easy and medium questions almost perfectly, then dropped sharply on hard questions that combined multiple joins, aggregation, and ordering. Chain-of-thought did slightly better overall, but the gap is only one or two queries out of 15. Failures were mostly missing GROUP BY, ORDER BY, or LIMIT clauses, or queries that stopped partway through a join.
 
 #### Limitations and Next Steps
 
-- Small benchmark (15 questions, one run per strategy), so a single query moves accuracy by about 7 points.
 - One model and one schema. Next steps are more LLMs, a larger question set, and more varied schemas.
 - The chain-of-thought prompt asked the model not to output its reasoning, so I never inspected whether it actually reasoned step by step.
 
