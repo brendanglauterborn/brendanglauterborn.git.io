@@ -203,8 +203,63 @@ ALS beat user-based CF on every ranking metric. At K=5, ALS precision was 14.2% 
 
 <br>
 
-### Natural Language to SQL  LLM Prompt Engineering
+### Natural Language to SQL — LLM Prompt Engineering
 
-As LLMs get used more often to translate natural language questions into executable SQL, understanding where and why they fail becomes important for anyone relying on them in production. In this project, I used the OpenAI API to run controlled prompt-engineering experiments consisting of zero-shot, few-shot, and chain-of-thought. I measured how each strategy affected query accuracy. The results quantified clear accuracy tradeoffs between approaches and surfaced common failure modes in LLM-generated SQL.
+*Testing how prompting strategy changes the SQL an LLM writes, and where it breaks.*
 
-![Python](https://img.shields.io/badge/Python-eeeeee?style=flat&logo=python&logoColor=3776AB) ![OpenAI API](https://img.shields.io/badge/OpenAI%20API-eeeeee?style=flat&logo=openai&logoColor=412991) ![SQL](https://img.shields.io/badge/SQL-eeeeee?style=flat)
+Non-experts increasingly rely on LLMs to query databases, so it matters where the generated SQL fails. I wrote 15 questions of varying difficulty (5 easy, 5 medium, 5 hard) over the Chinook SQLite database and tested three prompting strategies with gpt-4.1-mini through the OpenAI API. That gave 45 queries in total. I executed each one and graded it correct, partially correct, or incorrect against a gold query.
+
+#### Prompting Strategies
+
+Every prompt included the full Chinook schema and the question, and told the model to return only a single SQL query. Only the extra guidance changed:
+
+- **Zero-shot:** the schema and question only.
+- **Few-shot:** the same, plus three worked examples: a single-table projection, a join with aggregation and GROUP BY, and a multi-table join with ORDER BY and LIMIT.
+- **Chain-of-thought-style:** the model is told to reason step by step about tables, joins, filters, and aggregations before returning only the final query.
+
+The schema is embedded directly in each prompt rather than retrieved with RAG, which is reasonable at this scale.
+
+<details>
+<summary> Schema used in the experiments (subset)</summary>
+
+| Table | Key attributes |
+|---|---|
+| Album | AlbumId, Title, ArtistId |
+| Artist | ArtistId, Name |
+| Customer | CustomerId, FirstName, LastName, Country, Email |
+| Employee | EmployeeId, FirstName, LastName, Title, ReportsTo |
+| Genre | GenreId, Name |
+| Invoice | InvoiceId, CustomerId, InvoiceDate, BillingCountry, Total |
+| InvoiceLine | InvoiceLineId, InvoiceId, TrackId, UnitPrice, Quantity |
+| MediaType | MediaTypeId, Name |
+| Playlist | PlaylistId, Name |
+| PlaylistTrack | PlaylistId, TrackId |
+| Track | TrackId, Name, AlbumId, MediaTypeId, GenreId, UnitPrice |
+
+</details>
+
+#### Results
+
+| Strategy | Easy | Medium | Hard | Total correct |
+|---|---|---|---|---|
+| Zero-shot | 5/5 | 5/5 | 1/5 | 11/15 |
+| Few-shot | 5/5 | 4/5 | 1/5 | 10/15 |
+| Chain-of-thought | 5/5 | 5/5 | 2/5 | 12/15 |
+
+<img src="images/sql_by_difficulty.png" width="600">
+
+<img src="images/sql_grading_breakdown.png" width="600">
+
+#### Key Finding
+
+Difficulty mattered more than prompting strategy. All three strategies handled easy and medium questions almost perfectly, then dropped sharply on hard questions that combined multiple joins, aggregation, and ordering. Chain-of-thought did slightly better overall, but the gap is only one or two queries out of 15. Failures were mostly missing GROUP BY, ORDER BY, or LIMIT clauses, or queries that stopped partway through a join.
+
+#### Limitations and Next Steps
+
+- Small benchmark (15 questions, one run per strategy), so a single query moves accuracy by about 7 points.
+- One model and one schema. Next steps are more LLMs, a larger question set, and more varied schemas.
+- The chain-of-thought prompt asked the model not to output its reasoning, so I never inspected whether it actually reasoned step by step.
+
+![Python](https://img.shields.io/badge/Python-eeeeee?style=flat&logo=python&logoColor=3776AB) ![OpenAI API](https://img.shields.io/badge/OpenAI%20API-eeeeee?style=flat&logo=openai&logoColor=412991) ![SQLite](https://img.shields.io/badge/SQLite-eeeeee?style=flat&logo=sqlite&logoColor=003B57) ![pandas](https://img.shields.io/badge/pandas-eeeeee?style=flat&logo=pandas&logoColor=150458)
+
+[View code on GitHub](#)
